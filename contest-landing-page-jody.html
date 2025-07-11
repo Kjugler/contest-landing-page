@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Agnes Protocol – Contest</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      background-color: black;
+      font-family: Arial, sans-serif;
+    }
+    .video-background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .video-background iframe {
+      width: 100vw;
+      height: 100vh;
+    }
+    .overlay-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 60vh;
+      text-align: center;
+      color: white;
+    }
+    .overlay-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .overlay-content a {
+      display: inline-block;
+      margin: 1rem;
+      padding: 1rem 2rem;
+      background: crimson;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      transition: background 0.3s ease;
+    }
+    .overlay-content a:hover {
+      background: darkred;
+    }
+    .ticker {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #111;
+      color: #fff;
+      padding: 0.5rem;
+      font-size: 1rem;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .ticker-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: ticker 20s linear infinite;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="video-background">
+  <iframe 
+    src="https://www.youtube.com/embed/_DEmdMYdjXk?autoplay=1&mute=1&controls=0&loop=1&playlist=_DEmdMYdjXk"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<div class="overlay-content">
+  <h1>Welcome to the Contest</h1>
+  <a href="sample-chapters.html">Read Sample Chapters</a>
+  <a href="http://eepurl.com/jhqm42" target="_blank">Enter the Contest</a>
+  <a href="https://theagnesprotocol.com">Buy the Book</a>
+</div>
+
+<div class="ticker">
+  <div class="ticker-text">#WhereIsJodyVernon • #TheAgnesProtocol • #TruthFictionBlurred • #ReadItBeforeTheyEraseIt</div>
+</div>
+
+</body>
+</html>
