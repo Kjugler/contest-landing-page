@@ -1,0 +1,42 @@
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <div class="ticker__item">🔥 Jody Vernon seen fleeing rooftop in Rome.</div>
+    <div class="ticker__item">📈 Agnes Protocol tops banned book list – again.</div>
+    <div class="ticker__item">🕵️‍♂️ Whistleblower 'Nocturne' hints at hidden chapter.</div>
+    <div class="ticker__item">💥 Page 443 reference triggers classified search.</div>
+    <div class="ticker__item">🏆 Current Points Leader: TracerShadow – 12,850 pts</div>
+    <div class="ticker__item">🥈 Runner Up: RedFalconX – 11,920 pts</div>
+    <div class="ticker__item">🚨 DeepQuill Systems Accessed Without Clearance</div>
+  </div>
+</div>
+
+<style>
+.ticker-wrap {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: red;
+  color: white;
+  font-family: monospace;
+  font-size: 16px;
+  z-index: 9999;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.ticker {
+  display: flex;
+  animation: ticker 60s linear infinite;
+  white-space: nowrap;
+}
+.ticker__item {
+  padding: 0 4rem;
+  flex-shrink: 0;
+}
+@keyframes ticker {
+  0% { transform: translate3d(100%, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+</style>
