@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Agnes Protocol - Contest Landing</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+      gap: 1rem;
+    }
+    .menu button {
+      padding: 1rem;
+      background-color: #111;
+      border: 2px solid green;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .menu button:hover,
+    .menu button.focused {
+      background-color: green;
+      color: black;
+    }
+    .tapsy {
+      text-align: center;
+      margin: 2rem;
+      font-size: 1.2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .ticker-ribbon {
+      background-color: red;
+      color: white;
+      white-space: nowrap;
+      overflow: hidden;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 0.5rem;
+      font-weight: bold;
+    }
+    .ticker-ribbon span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: ticker 20s linear infinite;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+    .back-btn {
+      display: inline-block;
+      margin: 1rem auto;
+      padding: 0.5rem 1rem;
+      background: #222;
+      border: 1px solid white;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/_DEmdMYdjXk?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="tapsy" id="tapsyText">Tap here to read a sample chapter!</div>
+
+  <div class="menu">
+    <button id="sampleBtn">Read Sample Chapters</button>
+    <button id="contestBtn">Enter the Contest</button>
+    <button id="pointsBtn">Earn Points</button>
+    <button id="buyBtn">Buy the Book</button>
+  </div>
+
+  <div class="ticker-ribbon"><span>Agnes Protocol tops banned book list – again • Jody Vernon breaks silence in viral interview • New points leader: Billy Bronski – 1,340 pts • Tapsy declares: “This book changes everything” • Enter to win the 6-day dream vacation NOW!</span></div>
+
+  <script>
+    const buttons = [
+      { id: 'sampleBtn', text: 'Tap here to read a sample chapter!', link: '/sample-chapters.html' },
+      { id: 'contestBtn', text: 'Win this Vacation!', link: '/contest-entry.html' },
+      { id: 'pointsBtn', text: 'Tap here to win points.', link: '/earn-points.html' },
+      { id: 'buyBtn', text: 'Buy the book. It will be the best thing you do today.', link: 'https://buy.stripe.com/test_7sY9ATfsHgPK47i3vq' }
+    ];
+
+    let current = 0;
+    const tapsy = document.getElementById('tapsyText');
+
+    function cycleFocus() {
+      buttons.forEach((btn, index) => {
+        const el = document.getElementById(btn.id);
+        if (index === current) {
+          el.classList.add('focused');
+          tapsy.innerText = btn.text;
+        } else {
+          el.classList.remove('focused');
+        }
+      });
+      current = (current + 1) % buttons.length;
+    }
+
+    buttons.forEach(btn => {
+      const el = document.getElementById(btn.id);
+      el.onclick = () => window.location.href = btn.link;
+    });
+
+    cycleFocus();
+    setInterval(cycleFocus, 5000);
+  </script>
+
+</body>
+</html>
