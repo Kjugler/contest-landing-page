@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contest Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .video-container {
+      margin-top: 20px;
+      width: 90vw;
+      max-width: 720px;
+      aspect-ratio: 16/9;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .button-container {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    .action-button {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background-color: black;
+      border: 2px solid lime;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 10px lime;
+      transition: all 0.3s ease;
+    }
+    .action-button:hover {
+      box-shadow: 0 0 20px lime;
+      background-color: #111;
+    }
+    .footer-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background: red;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1rem;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker {
+      display: inline-block;
+      animation: scroll-left 30s linear infinite;
+    }
+    @keyframes scroll-left {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/_DEmdMYdjXk?rel=0&modestbranding=1" allowfullscreen></iframe>
+  </div>
+
+  <div class="button-container">
+    <a class="action-button" href="sample-chapters.html">Read Sample Chapters</a>
+    <a class="action-button" href="http://eepurl.com/jhqm42">Enter the Contest</a>
+    <a class="action-button" href="https://theagnesprotocol.com">Buy the Book</a>
+    <a class="action-button" href="earn-points.html">Earn More Points</a>
+  </div>
+
+  <div class="footer-banner">
+    <span class="ticker">
+      Agnes Protocol tops banned book list — again. ⚡ Tiana M. just earned 3,450 points. ⚡ Nate R. entered the contest from Tucson. ⚡ #WhereIsJodyVernon gains traction. ⚡ 6-day cruise still up for grabs.
+    </span>
+  </div>
+
+</body>
+</html>
